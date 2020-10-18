@@ -59,7 +59,7 @@ Public Function exec()
         Dim wkAddress As String: wkAddress = Replace(item.itemAddress, "$", "")
         colOut = colOut + 1: Call wsOut.Hyperlinks.Add(anchor:=wsOut.Cells(rowOut, colOut), _
                                                         address:=item.path & "\" & item.bookName, _
-                                                        SubAddress:=item.sheetName & "!" & wkAddress, _
+                                                        SubAddress:="'" & item.sheetName & "'" & "!" & wkAddress, _
                                                         TextToDisplay:=wkAddress)
         Dim wkValue As String: wkValue = item.itemValue
         If Left(wkValue, 1) = "=" Then wkValue = "'" & wkValue
